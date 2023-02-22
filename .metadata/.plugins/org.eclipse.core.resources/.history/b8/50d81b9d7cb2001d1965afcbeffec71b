@@ -1,0 +1,10 @@
+package com.masai.DAO;
+
+import com.masai.DTO.Course;
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+
+public interface CourseDao {
+
+	public void addNewCourse(Course course) throws RecordNotfoundException;
+	
+}

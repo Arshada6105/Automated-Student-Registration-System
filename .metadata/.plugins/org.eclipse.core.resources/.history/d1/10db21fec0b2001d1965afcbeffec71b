@@ -1,0 +1,119 @@
+package com.masai.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.masai.DTO.Batch;
+import com.masai.DTO.Course;
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+import com.masai.EXCEPTIONS.SomethingWentWrongException;
+
+
+public class CourseDaoImpl implements CourseDao{
+	
+
+	@Override
+	public void addNewCourse(Course course) throws SomethingWentWrongException {
+		// TODO Auto-generated method stub
+		Connection conn=null;
+		try {
+			conn=DBUtility.connectToDatabase();
+			String query ="insert into courses values(?,?,?)";
+			PreparedStatement prep = conn.prepareStatement(query);
+			prep.setInt(1, course.getCourseId());
+			prep.setString(2, course.getCourseName());
+			prep.setInt(3, course.getCourseFee());
+			
+			if(prep.executeUpdate()>0) {
+				System.out.println("course added successfully");
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();		}
+		
+		try {
+			DBUtility.closeConnection(conn);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void upDateCourseFee(int courseId, int feeAmount)
+			throws RecordNotfoundException, SomethingWentWrongException {
+		// TODO Auto-generated method stub
+		
+		Connection conn=null;
+		try {
+			conn=DBUtility.connectToDatabase();
+			String upQuery = "update courses set cfee=cfee+? where cid=?";
+			PreparedStatement prep = conn.prepareStatement(upQuery);
+			prep.setInt(1, feeAmount);
+			prep.setInt(2, courseId);
+			if(prep.executeUpdate()>0) {
+				System.out.println("course fee updated successfully");
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();		}
+		
+		try {
+			DBUtility.closeConnection(conn);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void deleteCourse(int courseId) throws RecordNotfoundException, SomethingWentWrongException {
+		// TODO Auto-generated method stub
+		Connection conn;
+		try {
+			conn=DBUtility.connectToDatabase();
+			String query = "delete from courses where cid=?";
+			PreparedStatement prep = conn.prepareStatement(query);
+			prep.setInt(1, courseId);
+			if(prep.executeUpdate()>0) {
+				System.out.println("course deleted successfully");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public List<Course> getAllCourse() throws RecordNotfoundException, SomethingWentWrongException {
+		// TODO Auto-generated method stub
+		List<Course> list;
+		Connection conn;
+		try {
+			conn=DBUtility.connectToDatabase();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public void createBatch(Batch batch) throws RecordNotfoundException, SomethingWentWrongException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Course> getAllCourseWithSeats() throws RecordNotfoundException, SomethingWentWrongException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

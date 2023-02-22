@@ -1,0 +1,9 @@
+package com.masai.DAO;
+
+import com.masai.DTO.Batch;
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+
+public interface BatchDao {
+
+	public void addBatch(Batch batch) throws RecordNotfoundException;
+}

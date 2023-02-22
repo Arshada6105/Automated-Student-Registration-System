@@ -1,0 +1,10 @@
+package com.masai.EXCEPTIONS;
+
+public class SomeThingWentWrong extends Exception{
+
+	public String toString() {
+		return "Something went wrong, Try again later";
+	}
+}
+
+

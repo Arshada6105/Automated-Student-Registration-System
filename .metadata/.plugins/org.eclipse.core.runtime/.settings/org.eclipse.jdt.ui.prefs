@@ -1,0 +1,8 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.masai.UI.StudentUi"><rhs name\="com.masai.UI.StudentUi"/></lhs><lhs name\="com.masai.UI.CourseUi"><rhs name\="com.masai.UI.CourseUi"/></lhs><lhs name\="com.masai.UI.BatchUi"><rhs name\="com.masai.UI.BatchUi"/></lhs><lhs name\="com.masai.DAO.StudentDao"><rhs name\="com.masai.DAO.StudentDaoImpl"/></lhs><lhs name\="com.masai.DAO.CourseDao"><rhs name\="com.masai.DAO.CourseDaoImpl"/></lhs><lhs name\="com.masai.DAO.BatchDao"><rhs name\="com.masai.DAO.BatchDaoImpl"/></lhs><lhs name\="com.masai.DTO.Course"><rhs name\="com.masai.DTO.CourseImpl"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="com.masai.DTO.Batch"><rhs name\="com.masai.DTO.BatchImpl"/></lhs></history>
+content_assist_number_of_computers=15
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=22
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

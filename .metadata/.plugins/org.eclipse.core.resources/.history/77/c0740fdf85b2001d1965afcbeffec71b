@@ -1,0 +1,11 @@
+package com.masai.DAO;
+
+import com.masai.DTO.Batch;
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+import com.masai.EXCEPTIONS.SomethingWentWrongException;
+
+public interface BatchDao {
+
+	public void updateTotalSeats(int batchId) throws RecordNotfoundException,SomethingWentWrongException;
+	
+}

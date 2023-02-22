@@ -1,0 +1,8 @@
+package com.masai.DAO;
+
+import com.masai.DTO.Course;
+
+public interface CourseDao {
+
+	public void addNewCourse(Course course) ;
+}

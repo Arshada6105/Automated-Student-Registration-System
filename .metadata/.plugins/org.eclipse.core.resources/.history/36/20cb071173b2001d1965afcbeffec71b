@@ -1,0 +1,13 @@
+package com.masai.DAO;
+
+public class DBUtility {
+
+	static {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
