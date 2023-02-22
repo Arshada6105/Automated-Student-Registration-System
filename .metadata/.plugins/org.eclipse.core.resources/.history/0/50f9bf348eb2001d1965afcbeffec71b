@@ -1,0 +1,10 @@
+package com.masai.DTO;
+
+import java.util.Set;
+
+public class BatchImpl implements Batch{
+	private int batchId;
+	private int seats;
+	private int courseId;
+	private Set<Student> student;
+}

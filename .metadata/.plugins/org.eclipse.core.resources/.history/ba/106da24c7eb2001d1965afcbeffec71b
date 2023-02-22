@@ -1,0 +1,8 @@
+package com.masai.DAO;
+
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+
+public interface StudentDao {
+
+	public void addStudent(Student student) throws RecordNotfoundException;
+}

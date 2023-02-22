@@ -1,0 +1,67 @@
+package com.masai.UI;
+
+import java.util.Scanner;
+
+public class Main {
+	private static StudentUi studentUi;
+	private static CourseUi courseUi;
+	private static BatchUi batchUi;
+	
+	
+	static void adminMenu(Scanner sc) {
+		int choice=0;
+		do {
+			displayAdminMenu();
+			
+		}while(choice!=0);
+	}
+	
+	static void adminLogin(Scanner sc) {
+		System.out.println("Enter username");
+		String username=sc.next();
+		System.out.println("Enter password");
+		String password=sc.next();
+		if(username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
+			adminMenu(sc);		
+		}else {
+			System.out.println("Wrong Credentials Admin");
+		}
+	}
+	
+	
+	
+	static void studentLogin(Scanner sc) {
+		System.out.println("Code to krlo pehle uncle");
+	}
+	
+ public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	 studentUi = new StudentUi(sc);
+	 courseUi = new CourseUi(sc);
+	 batchUi = new BatchUi(sc);
+	 
+	 int choice = 0;
+	 
+	 do {
+		 System.out.println("1. Admin Login\n2. Student Login\n0. Exit");
+		 choice=sc.nextInt();
+		switch(choice) {
+		case 0:
+			System.out.println("Thank You, Visit again");
+			break;
+		case 1:
+			adminLogin(sc);
+			break;
+		case 2:
+			studentLogin(sc);
+			break;
+		default:
+			System.out.println("Invalid input!, Please try again ");
+		}
+	 }while(choice!=0);
+	 sc.close();
+	 
+	 
+}
+	
+}

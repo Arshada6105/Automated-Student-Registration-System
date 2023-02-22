@@ -1,0 +1,18 @@
+package com.masai.UI;
+
+import java.util.Scanner;
+
+import com.masai.DAO.StudentDao;
+
+public class StudentUi {
+	StudentDao student;
+	Scanner sc;
+	
+	public StudentUi(StudentDao student, Scanner sc) {
+		this.student = student;
+		this.sc = sc;
+	}
+	
+	
+	
+}

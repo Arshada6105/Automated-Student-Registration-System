@@ -1,0 +1,38 @@
+package com.masai.DTO;
+
+public class StudentImpl implements Student{
+
+	private int id;
+	private String name;
+	private String state;
+	private String email;
+	private String phone;
+	private String password;
+	private Batch batch;
+	
+	
+	
+	
+	public StudentImpl() {
+		super();
+	}
+
+
+
+
+	public StudentImpl(int id, String name, String state, String email, String phone, String password) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.state = state;
+		this.email = email;
+		this.phone = phone;
+		this.password = password;
+	}
+	
+	
+	
+	
+	
+	
+}
