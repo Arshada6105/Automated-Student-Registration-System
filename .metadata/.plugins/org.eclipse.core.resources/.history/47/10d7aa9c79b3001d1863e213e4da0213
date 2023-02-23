@@ -1,0 +1,25 @@
+package com.masai.DTO;
+
+public interface CourseSeats {
+
+	public String getCourseName();
+
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+
+
+	public int getTotalSeats() {
+		return totalSeats;
+	}
+
+
+
+	public void setTotalSeats(int totalSeats) {
+		this.totalSeats = totalSeats;
+	}
+
+
+}

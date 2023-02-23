@@ -1,0 +1,8 @@
+package com.masai.DAO;
+
+public interface CourseSeatsDao  {
+
+	public void getCourseSeats() {
+		
+	}
+}

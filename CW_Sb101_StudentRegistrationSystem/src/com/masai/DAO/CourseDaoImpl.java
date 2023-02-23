@@ -92,50 +92,42 @@ public class CourseDaoImpl implements CourseDao{
 		}
 		
 	}
-	
-	public List<Course> getListFromResultSet(ResultSet set) throws SQLException{
-		List<Course> list= new ArrayList<>();
-		while(set.next()) {
-			Course c = new CourseImpl(set.getInt("cid"), set.getString("cname"), set.getInt("cfee"));
-			list.add(c);
-		}
-		
-		return list;
-	}
 
 	@Override
-	public List<Course> getAllCourse() throws RecordNotfoundException, SomethingWentWrongException {
+	public Course getCourseInfo(String name) throws RecordNotfoundException, SomethingWentWrongException {
 		// TODO Auto-generated method stub
-		List<Course> list = new ArrayList<>();
-		Connection conn;
+		Connection conn=null;
+		Course course=null;
 		try {
 			conn=DBUtility.connectToDatabase();
-			String query="select * from courses";
+			String query = "Select * from courses where cname=?";
 			PreparedStatement prep = conn.prepareStatement(query);
+			prep.setString(1, name);
 			ResultSet set = prep.executeQuery();
 			if(DBUtility.isResultSetEmpty(set)) {
-				throw new RecordNotfoundException("No courses available");
+				System.out.println("No such course exists");
 			}
+			set.next();
 			
-			list=getListFromResultSet(set);
-			
-			
+			course = new CourseImpl(set.getInt("cid"), set.getString("cname"), set.getInt("cfee"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return list;
+		return course;
 	}
-
+	
+	
 	@Override
 	public void createBatch(Batch batch) throws RecordNotfoundException, SomethingWentWrongException {
 		// TODO Auto-generated method stub
 		Connection conn;
 		try {
 			conn=DBUtility.connectToDatabase();
-			String query="insert into batches (cid) values (?)";
+			String query="insert into batches (bid,cid) values (?,?)";
 			PreparedStatement prep = conn.prepareStatement(query);
-			prep.setInt(1, batch.getCourseId());
+			prep.setInt(1, batch.getBatchId());
+			prep.setInt(2, batch.getCourseId());
 			
 			if(prep.executeUpdate()>0) {
 				System.out.println("Batch created under a course successfully");

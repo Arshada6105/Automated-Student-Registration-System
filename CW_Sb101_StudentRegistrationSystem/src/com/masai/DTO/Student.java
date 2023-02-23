@@ -65,6 +65,12 @@ public interface Student {
 
 
 	public void setBatch(Batch batch);
+	
+	public int getBatchId();
+
+
+
+	public void setBatchId(int batchId);
 
 
 

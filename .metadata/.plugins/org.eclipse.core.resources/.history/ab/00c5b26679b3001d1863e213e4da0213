@@ -1,0 +1,6 @@
+package com.masai.DTO;
+
+public class CourseSeatsImpl implements CourseSeats{
+	private static string courseName;
+	
+}
