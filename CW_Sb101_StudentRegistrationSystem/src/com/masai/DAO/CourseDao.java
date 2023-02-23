@@ -12,7 +12,7 @@ public interface CourseDao {
 	public void addNewCourse(Course course) throws SomethingWentWrongException;
 	public void upDateCourseFee(int courseId,int feeAmount) throws RecordNotfoundException,SomethingWentWrongException;
 	public void deleteCourse(int courseId) throws RecordNotfoundException,SomethingWentWrongException;
-	public List<Course> getAllCourse() throws RecordNotfoundException,SomethingWentWrongException;
+	public Course getCourseInfo(String name) throws RecordNotfoundException,SomethingWentWrongException;
 	public void createBatch(Batch batch) throws RecordNotfoundException,SomethingWentWrongException;
 	public List<Course> getAllCourseWithSeats() throws RecordNotfoundException,SomethingWentWrongException;
 	

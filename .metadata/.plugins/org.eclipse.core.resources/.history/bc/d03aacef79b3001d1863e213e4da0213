@@ -1,0 +1,12 @@
+package com.masai.DAO;
+
+import java.util.List;
+
+import com.masai.DTO.CourseSeats;
+
+public interface CourseSeatsDao  {
+
+	public List<CourseSeats> getCourseSeats() {
+		
+	}
+}

@@ -1,0 +1,5 @@
+package com.masai.DAO;
+
+public interface CourseSeatsDaoImpl {
+
+}

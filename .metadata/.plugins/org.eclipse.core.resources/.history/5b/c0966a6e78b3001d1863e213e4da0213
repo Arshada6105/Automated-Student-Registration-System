@@ -1,0 +1,27 @@
+package com.masai.UI;
+
+public class CourseSeatsUi {
+	Scanner sc;
+	CourseSeatsDao csDao;
+	
+	
+	
+	
+	
+	
+
+	public CourseSeatsUi(Scanner sc) {
+		super();
+		this.sc = sc;
+	}
+
+
+
+
+
+
+
+	public void getAllList() {
+		
+	}
+}

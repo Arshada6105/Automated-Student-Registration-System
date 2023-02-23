@@ -1,0 +1,21 @@
+package com.masai.UI;
+
+import java.util.Scanner;
+
+import com.masai.DAO.CourseSeatsDao;
+
+public class CourseSeatsUi {
+	Scanner sc;
+	CourseSeatsDao csDao;
+	
+
+	public CourseSeatsUi(Scanner sc) {
+		super();
+		this.sc = sc;
+	}
+
+	public void getAllList() {
+		System.out.println("The list of courses and total seats are as folloes");
+		
+	}
+}

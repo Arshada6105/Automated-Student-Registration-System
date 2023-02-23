@@ -7,7 +7,6 @@ public class BatchImpl implements Batch{
 	private int batchId;
 	private int seats;
 	private int courseId;
-	private Set<Student> student; //Set of child table (Student)
 	private Course course; //object of parent table (Course)
 	
 	
@@ -16,13 +15,13 @@ public class BatchImpl implements Batch{
 	}
 
 
-
-	public BatchImpl(int courseId) {
+	public BatchImpl(int batchId, int seats, int courseId, Course course) {
 		super();
+		this.batchId = batchId;
+		this.seats = seats;
 		this.courseId = courseId;
+		this.course = course;
 	}
-
-
 
 	public int getBatchId() {
 		return batchId;
@@ -58,22 +57,6 @@ public class BatchImpl implements Batch{
 		this.courseId = courseId;
 	}
 
-
-
-	public Set<Student> getStudent() {
-		return student;
-	}
-
-
-
-	public void setStudent(Set<Student> student) {
-		this.student = student;
-	}
-	
-	
-
-
-
 	public Course getCourse() {
 		return course;
 	}
@@ -86,10 +69,19 @@ public class BatchImpl implements Batch{
 
 
 
+	
+
+
+
 	@Override
 	public String toString() {
-		return "BatchImpl [batchId=" + batchId + ", seats=" + seats + ", courseId=" + courseId + "]";
+		return "BatchImpl [batchId=" + batchId + ", seats=" + seats + ", courseId=" + courseId + ", course=" + course
+				+ "]";
 	}
+
+
+
+
 
 
 

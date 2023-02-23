@@ -28,11 +28,6 @@ public interface Batch {
 
 
 
-	public Set<Student> getStudent() ;
-
-
-
-	public void setStudent(Set<Student> student);
 	
 	
 

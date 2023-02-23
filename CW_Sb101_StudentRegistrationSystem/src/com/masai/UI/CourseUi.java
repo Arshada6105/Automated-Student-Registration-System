@@ -67,13 +67,11 @@ public class CourseUi {
 	}
 	
 	public void courseinfo() {
-		System.out.println("All the course details are as follows");
+		System.out.println("Enter the course name you want to get info about");
+		String name=sc.next();
 		try {
-			
-			List<Course> list=course.getAllCourse();
-			for(Course c: list) {
-				System.out.println(c);
-			}
+			Course crse=course.getCourseInfo(name);
+			System.out.println(crse);
 		} catch (RecordNotfoundException | SomethingWentWrongException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -81,14 +79,20 @@ public class CourseUi {
 	}
 	
 	public void createBatch() {
-		System.out.println("insert the course id under which you want to create batch");
-		Batch batch = new BatchImpl(sc.nextInt());
+		System.out.println("Enter the course id under which you want to create the batch");
+		int id=sc.nextInt();
+		Batch batch = new BatchImpl();
+		System.out.println("Enter the batch id you want to create the batch");
+		batch.setBatchId(sc.nextInt());
+		batch.setCourseId(id);
+		
 		try {
 			course.createBatch(batch);
 		} catch (RecordNotfoundException | SomethingWentWrongException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 	
 }

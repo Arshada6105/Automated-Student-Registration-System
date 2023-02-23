@@ -6,6 +6,7 @@ public class Main {
 	private static StudentUi studentUi;
 	private static CourseUi courseUi;
 	private static BatchUi batchUi;
+	private static CourseSeatsUi csUi;
 	
 	
 	static void displayAdminMenu() {
@@ -51,7 +52,14 @@ public class Main {
 			case 5:
 				courseUi.createBatch();
 				break;
-				
+			// DonT forget to create CASE 6 over here	
+			case 7:
+				batchUi.updateSeats();		
+				break;
+			
+			case 8:
+				studentUi.getStudentLists();
+				break;
 			}
 			
 		}while(choice!=0);
@@ -69,11 +77,50 @@ public class Main {
 			System.out.println("Wrong Credentials Admin");
 		}
 	}
+	static void displayStudentMenu() {
+		System.out.println("Enter Your Choice Student");
+		System.out.println("1. update Student details.");
+		System.out.println("2. Watch All the course list and seat availibility.");
+		System.out.println("0. Exit.");
+		
+	}
+	
+	static void studentMenu(Scanner sc) {
+		int choice=0;
+		do {
+		displayStudentMenu();
+		choice=sc.nextInt();
+		switch(choice) {
+		case 0:
+			System.out.println("Thank you! have a nice day student");
+			break;
+		case 1:
+			studentUi.updateStudent();
+			break;
+			
+		case 2:
+			csUi.getAllList();
+		}
+			
+			
+		}while(choice!=0);
+	}
 	
 	
 	
 	static void studentLogin(Scanner sc) {
-		System.out.println("Code to krlo pehle uncle");
+		System.out.println("Already a user , Enter user name and password");
+		if(studentUi.login()==false) {
+			System.out.println("Try again");
+			return;
+		}
+			
+			studentMenu(sc);
+		
+	}
+	
+	static void StudentResgistration(Scanner sc) {
+		studentUi.registration();
 	}
 	
 	
@@ -84,11 +131,12 @@ public class Main {
 	 studentUi = new StudentUi(sc);
 	 courseUi = new CourseUi(sc);
 	 batchUi = new BatchUi(sc);
+	 csUi = new CourseSeatsUi(sc);
 	 
 	 int choice = 0;
 	 
 	 do {
-		 System.out.println("1. Admin Login\n2. Student Login\n0. Exit");
+		 System.out.println("1. Admin Login\n2. Student Login\n3. New User Registration\n0. Exit");
 		 choice=sc.nextInt();
 		switch(choice) {
 		case 0:
@@ -99,6 +147,9 @@ public class Main {
 			break;
 		case 2:
 			studentLogin(sc);
+			break;
+		case 3:
+			StudentResgistration(sc);
 			break;
 		default:
 			System.out.println("Invalid input!, Please try again ");
