@@ -1,5 +1,0 @@
-package com.masai.DAO;
-
-public interface Course_Id_nameDao {
-
-}
