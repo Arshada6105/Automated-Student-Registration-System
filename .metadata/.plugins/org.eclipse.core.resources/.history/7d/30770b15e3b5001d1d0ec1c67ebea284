@@ -1,8 +1,0 @@
-package com.masai.DAO;
-
-import com.masai.EXCEPTIONS.RecordNotfoundException;
-
-public class Course_Id_nameDaoImpl implements Course_Id_nameDao {
-
-	public void showAllCourseIdName() throws RecordNotfoundException;
-}

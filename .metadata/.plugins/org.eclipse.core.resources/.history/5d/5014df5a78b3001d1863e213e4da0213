@@ -1,8 +1,0 @@
-package com.masai.UI;
-
-public class CourseSeatsUi {
-
-	public void getAllList() {
-		
-	}
-}

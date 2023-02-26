@@ -1,6 +1,0 @@
-package com.masai.DTO;
-
-public class CourseImpl implements Course{
-
-	private int courseId;
-}

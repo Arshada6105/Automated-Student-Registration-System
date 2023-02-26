@@ -1,5 +1,0 @@
-package com.masai.DAO;
-
-public class CourseSeatsDaoImpl implements CourseSeatsDao{
-
-}

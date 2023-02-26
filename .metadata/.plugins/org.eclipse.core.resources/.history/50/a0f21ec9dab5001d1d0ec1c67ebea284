@@ -1,7 +1,0 @@
-package com.masai.DTO;
-
-public class courseB_idImpl {
-
-	String Cname;
-	int bid;
-}
