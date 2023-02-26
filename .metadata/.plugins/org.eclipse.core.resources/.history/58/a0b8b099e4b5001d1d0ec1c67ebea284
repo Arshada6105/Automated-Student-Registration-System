@@ -1,0 +1,19 @@
+package com.masai.DAO;
+
+import java.sql.Connection;
+
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+
+public class Course_Id_nameDaoImpl implements Course_Id_nameDao {
+
+	@Override
+	public void showAllCourseIdName() throws RecordNotfoundException {
+		// TODO Auto-generated method stub
+		
+	Connection conn;
+	conn= DBUtility.connectToDatabase();
+		
+	}
+
+	
+}

@@ -1,0 +1,5 @@
+package com.masai.DAO;
+
+public class courseB_idDaoImpl implements courseB_idDao {
+
+}

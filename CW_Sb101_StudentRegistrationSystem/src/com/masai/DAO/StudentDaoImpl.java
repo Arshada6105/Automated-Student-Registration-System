@@ -36,7 +36,7 @@ public class StudentDaoImpl implements StudentDao{
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RecordNotfoundException("Phone Number Already exist");
 		}
 		
 		try {

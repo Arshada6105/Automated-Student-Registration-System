@@ -1,0 +1,9 @@
+package com.masai.DTO;
+
+public class Course_Id_nameImpl {
+
+	private int cid;
+	private String cname;
+	
+	
+}

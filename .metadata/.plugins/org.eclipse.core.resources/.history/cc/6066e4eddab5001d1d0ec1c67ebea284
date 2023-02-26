@@ -1,0 +1,20 @@
+package com.masai.DTO;
+
+public interface courseB_id {
+
+	public String getCname() {
+		return Cname;
+	}
+
+	public void setCname(String cname) {
+		Cname = cname;
+	}
+
+	public int getBid() {
+		return bid;
+	}
+
+	public void setBid(int bid) {
+		this.bid = bid;
+	}
+}
