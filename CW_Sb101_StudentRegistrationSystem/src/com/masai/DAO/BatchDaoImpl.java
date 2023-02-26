@@ -43,4 +43,32 @@ public class BatchDaoImpl implements BatchDao{
 		
 	}
 
+	@Override
+	public void decreaseSeats(int bid) throws RecordNotfoundException {
+		// TODO Auto-generated method stub
+		Connection conn=null;
+		try {
+			conn= DBUtility.connectToDatabase();
+			String query="Update batches set seats=seats-1 where bid=?";
+			PreparedStatement prep = conn.prepareStatement(query);
+			prep.setInt(1, bid);
+			
+			prep.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			throw new RecordNotfoundException(" Seat full, Better luck next time");
+		}
+		
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+
 }

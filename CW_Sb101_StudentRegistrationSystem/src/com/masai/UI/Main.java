@@ -2,6 +2,8 @@ package com.masai.UI;
 
 import java.util.Scanner;
 
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+
 public class Main {
 	private static StudentUi studentUi;
 	private static CourseUi courseUi;
@@ -120,7 +122,18 @@ public class Main {
 	}
 	
 	static void StudentResgistration(Scanner sc) {
-		studentUi.registration();
+		int bid=0;
+		try {
+			bid = studentUi.registration();
+			if(bid!=0) {
+				batchUi.decSeats(bid);
+			}
+		} catch (RecordNotfoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
+		
+		
 	}
 	
 	

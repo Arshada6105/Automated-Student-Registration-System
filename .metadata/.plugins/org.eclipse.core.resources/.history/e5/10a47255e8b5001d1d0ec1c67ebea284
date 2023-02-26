@@ -1,0 +1,23 @@
+package com.masai.DAO;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.masai.DTO.CourseIdCnameBid;
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+
+public class CourseIdCnameBidDaoImpl implements CourseIdCnameBidDao {
+
+	@Override
+	public void getCourseIdCnameBid() throws RecordNotfoundException {
+		// TODO Auto-generated method stub
+		
+		Connection conn;
+		List<CourseIdCnameBid> list = new ArrayList<>();
+		
+		conn= DBUtility.connectToDatabase()
+		
+	}
+
+}

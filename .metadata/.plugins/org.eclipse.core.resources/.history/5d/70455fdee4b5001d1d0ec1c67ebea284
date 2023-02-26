@@ -1,0 +1,30 @@
+package com.masai.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+
+public class Course_Id_nameDaoImpl implements Course_Id_nameDao {
+
+	@Override
+	public void showAllCourseIdName() throws RecordNotfoundException {
+		// TODO Auto-generated method stub
+		
+	Connection conn;
+	try {
+		conn= DBUtility.connectToDatabase();
+		String query="select cid , cname from courses";
+		PreparedStatement prep = conn.prepareStatement(query);
+		ResultSet set = prep.executeQuery();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
+	}
+
+	
+}

@@ -1,0 +1,13 @@
+package com.masai.DAO;
+
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+
+public class courseB_idDaoImpl implements courseB_idDao {
+
+	@Override
+	public void showCoursebid() throws RecordNotfoundException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

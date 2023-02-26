@@ -29,4 +29,15 @@ public class BatchUi {
 	}
 	
 	
+	public void decSeats(int bid) {
+		
+		try {
+			batch.decreaseSeats(bid);
+		} catch (RecordNotfoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
 }

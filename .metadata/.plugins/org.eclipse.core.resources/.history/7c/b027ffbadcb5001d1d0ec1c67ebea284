@@ -1,0 +1,29 @@
+package com.masai.DAO;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.masai.DTO.courseB_id;
+import com.masai.EXCEPTIONS.RecordNotfoundException;
+
+public class courseB_idDaoImpl implements courseB_idDao {
+
+	@Override
+	public void showCoursebid() throws RecordNotfoundException {
+		// TODO Auto-generated method stub
+		Connection conn= null;
+		List<courseB_id> list = new ArrayList<>();
+		try {
+			conn=DBUtility.connectToDatabase();
+			String query="Select  b.bid , c.cname Course , b.seats Available seats  from courses c inner join batches b on c.cid=b.cid";
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
