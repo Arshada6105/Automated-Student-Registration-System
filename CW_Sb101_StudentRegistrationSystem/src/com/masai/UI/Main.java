@@ -18,7 +18,7 @@ public class Main {
 		System.out.println("3. Delete a course from any training session.");
 		System.out.println("4. Search information about a course.");
 		System.out.println("5. Create batch under a course.");
-		System.out.println("6. Allocate students in a batch under a course.");
+//		System.out.println("6. Allocate students in a batch under a course.");
 		System.out.println("7. Update total seats of a batch");
 		System.out.println("8. View the students of every batch");
 		System.out.println("0. Exit");
@@ -37,30 +37,37 @@ public class Main {
 				
 			case 1:
 				courseUi.addCourse();
+				System.out.println();
 				break;
 				
 			case 2:
 				courseUi.updateCourse();
+				System.out.println();
 				break;
 				
 			case 3:
 				courseUi.deleteCourse();
+				System.out.println();
 				break;
 			
 			case 4:
 				courseUi.courseinfo();
+				System.out.println();
 				break;
 				
 			case 5:
 				courseUi.createBatch();
+				System.out.println();
 				break;
 			// DonT forget to create CASE 6 over here	
 			case 7:
-				batchUi.updateSeats();		
+				batchUi.updateSeats();	
+				System.out.println();
 				break;
 			
 			case 8:
 				studentUi.getStudentLists();
+				System.out.println();
 				break;
 			}
 			
@@ -84,6 +91,7 @@ public class Main {
 		System.out.println("1. update Student details.");
 		System.out.println("2. Watch All the course list and seat availibility.");
 		System.out.println("0. Exit.");
+		System.out.println();
 		
 	}
 	
@@ -98,10 +106,12 @@ public class Main {
 			break;
 		case 1:
 			studentUi.updateStudent();
+			System.out.println();
 			break;
 			
 		case 2:
 			csUi.getAllList();
+			System.out.println();
 		}
 			
 			
@@ -149,8 +159,17 @@ public class Main {
 	 int choice = 0;
 	 
 	 do {
+		 System.out.println("********Home Page Menu*******");
 		 System.out.println("1. Admin Login\n2. Student Login\n3. New User Registration\n0. Exit");
-		 choice=sc.nextInt();
+		if(sc.hasNextInt()) {
+			choice=sc.nextInt();
+		}else {
+			System.out.println("Input should be a number");
+			break;
+		}
+		
+	 
+		 
 		switch(choice) {
 		case 0:
 			System.out.println("Thank You, Visit again");
