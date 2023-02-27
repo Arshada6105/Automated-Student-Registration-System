@@ -142,7 +142,7 @@ public class StudentDaoImpl implements StudentDao{
 			}
 			
 			set.next();
-			ans=set.getString("sname");
+			ans=set.getString("sname")+" Student_Id "+set.getInt("sid");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println(new RecordNotfoundException("Please enter valid user and pas"));

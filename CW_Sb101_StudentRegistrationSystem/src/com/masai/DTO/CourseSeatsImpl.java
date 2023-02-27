@@ -46,7 +46,7 @@ public class CourseSeatsImpl implements CourseSeats{
 
 	@Override
 	public String toString() {
-		return "CourseSeatsImpl [courseName=" + courseName + ", totalSeats=" + totalSeats + "]";
+		return "courseName=" + courseName + ", totalSeats=" + totalSeats;
 	}
 	
 	
