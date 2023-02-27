@@ -1,5 +1,5 @@
 
-# Automated Student Registratioon System
+# Automated Student Registration System
 
  This automated application help Institute to enroll students efficiently, create batches under a course and allocates the students  in a batch . 
 
